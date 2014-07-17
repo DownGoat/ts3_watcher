@@ -32,6 +32,7 @@ ts3admin_pass = "CMynp1qh"
 ts3address = "127.0.0.1"
 ts3port = 10011
 
+"""
 db_user = "root"
 db_pass = "password"
 db_host = "127.0.0.1"
@@ -46,3 +47,4 @@ db_connector = "{0}://{1}:{2}@{3}:{4}/{5}".format(
     db_port,
     db_name
 )
+"""

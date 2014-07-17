@@ -21,39 +21,12 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 """
-from ts3_watcher.database import Model
-from sqlalchemy import Column, Integer, String, Boolean, Text, ForeignKey
-
 
 
 __author__ = 'Sindre Smistad'
 
 
-class Client(Model):
-
-    __tablename__ = "client"
-    id = Column('id', Integer, primary_key=True)
-    client_output_muted = Column(Integer)
-    client_database_id = Column(Integer)
-    client_away_message = Column(String(2048))
-    client_country = Column(String(3))
-    client_is_priority_speaker = Column(Integer)
-    client_channel_group_id = Column(Integer)
-    client_outputonly_muted = Column(Integer)
-    client_nickname = Column(String(2048))
-    client_description = Column(String(2048))
-    client_servergroups = Column(Integer)
-    client_icon_id = Column(Integer)
-    client_input_muted = Column(Integer)
-    client_badges = Column(String(2048))
-    client_away = Column(Integer)
-    cid = Column(Integer)
-    client_platform = Column(String(2048))
-    client_is_channel_commander = Column(Integer)
-    client_talk_power = Column(Integer)
-    clid = Column(Integer)
-
-
+class Client():
     def __init__(self, **kwargs):
         for k, v in kwargs.items():
             if v is None:

@@ -22,14 +22,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 """
 from ts3_watcher.models.channel import Channel
-from ts3_watcher.database import Model
-from sqlalchemy import Column, Integer, String, Boolean, Text, ForeignKey
-
 
 __author__ = 'Sindre Smistad'
 
 
-class VirtualServer(Model):
+class VirtualServer():
     """
     {
         'virtualserver_status': 'online',
@@ -44,19 +41,6 @@ class VirtualServer(Model):
         'virtualserver_name': 'TeamSpeak ]I[ Server'
     }
     """
-    __tablename__ = "virtual_server"
-    id = Column('id', Integer, primary_key=True)
-    virtualserver_id = Column(Integer)
-    virtualserver_name = Column(String(2048))
-    virtualserver_clientsonline = Column(Integer)
-    virtualserver_port = Column(Integer)
-    virtualserver_uptime = Column(Integer)
-    virtualserver_status = Column(String(100))
-    virtualserver_maxclients = Column(Integer)
-    virtualserver_machine_id = Column(Integer)
-    virtualserver_queryclientsonline = Column(Integer)
-    virtualserver_autostart = Column(Integer)
-
 
     def __init__(self, **kwargs):
         for k, v in kwargs.items():

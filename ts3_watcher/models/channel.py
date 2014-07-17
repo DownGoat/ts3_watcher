@@ -22,25 +22,12 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 """
 from ts3_watcher.models.client import Client
-from ts3_watcher.database import Model
-from sqlalchemy import Column, Integer, String, Boolean, Text, ForeignKey
 
 
 __author__ = 'Sindre Smistad'
 
 
-class Channel(Model):
-
-    __tablename__ = "channel"
-    id = Column('id', Integer, primary_key=True)
-    channel_order = Column(Integer)
-    cid = Column(Integer)
-    pid = Column(Integer)
-    channel_name = Column(String(2048))
-    clients = Column(Integer)
-    channel_description = Column(String(2048))
-
-
+class Channel():
     def __init__(self, **kwargs):
         for k, v in kwargs.items():
             if v is None:
