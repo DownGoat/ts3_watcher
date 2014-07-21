@@ -41,6 +41,16 @@ class VirtualServer():
         'virtualserver_name': 'TeamSpeak ]I[ Server'
     }
     """
+    virtualserver_id =                  None
+    virtualserver_name =                None
+    virtualserver_clientsonline =       None
+    virtualserver_port =                None
+    virtualserver_uptime =              None
+    virtualserver_status =              None
+    virtualserver_maxclients =          None
+    virtualserver_machine_id =          None
+    virtualserver_queryclientsonline =  None
+    virtualserver_autostart =           None
 
     def __init__(self, **kwargs):
         for k, v in kwargs.items():

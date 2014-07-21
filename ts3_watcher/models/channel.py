@@ -31,6 +31,13 @@ class Channel():
     """
     This class holds the information about a channel.
     """
+    channel_order =         None
+    cid =                   None
+    pid =                   None
+    channel_name =          None
+    clients =               None
+    channel_description =   None
+
     def __init__(self, **kwargs):
         for k, v in kwargs.items():
             if v is None:

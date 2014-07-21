@@ -27,6 +27,26 @@ __author__ = 'Sindre Smistad'
 
 
 class Client():
+    client_output_muted =           None
+    client_database_id =            None
+    client_away_message =           None
+    client_country =                None
+    client_is_priority_speaker =    None
+    client_channel_group_id =       None
+    client_outputonly_muted =       None
+    client_nickname =               None
+    client_description =            None
+    client_servergroups =           None
+    client_icon_id =                None
+    client_input_muted =            None
+    client_badges =                 None
+    client_away =                   None
+    cid =                           None
+    client_platform =               None
+    client_is_channel_commander =   None
+    client_talk_power =             None
+    clid =                          None
+
     def __init__(self, **kwargs):
         for k, v in kwargs.items():
             if v is None:
