@@ -93,7 +93,10 @@ class CommandHandler():
         # TODO this will crash if the command is not found HANDLE IT!
         # A bit confusing, but it uses the command from the input to call the right method, and passes the input to the
         # method.
-        return commands[command["command"]](command)
+        try:
+            return commands[command["command"]](command)
+        except KeyError as error:
+            return {"return": "error", "msg": "Command not found."}
 
     def clients(self, command):
         """
@@ -142,6 +145,7 @@ class CommandHandler():
         # TODO Only return data about the first virutal server, need to research adding additional virtual servers
         return VirtualServer.virtual_server_json(virtual_servers[0])
 
+
     def vote_kick(self, command):
         """
         This method kicks a client from the server,
@@ -160,7 +164,6 @@ class CommandHandler():
             }
         )
 
-        # TODO Needs to return something else if the command fails, clid may be invalid.
         return {'return':'ok', 'command':'vote_kick'}
 
 
@@ -199,6 +202,11 @@ def run():
 
 {
    "command":"vote_kick",
+   "clid":1
+}
+
+{
+   "command":"foobar",
    "clid":1
 }
 
