@@ -28,6 +28,9 @@ __author__ = 'Sindre Smistad'
 
 
 class Channel():
+    """
+    This class holds the information about a channel.
+    """
     def __init__(self, **kwargs):
         for k, v in kwargs.items():
             if v is None:
@@ -39,6 +42,13 @@ class Channel():
 
     @staticmethod
     def channel_json(channel):
+        """
+        This method turns a channel object into a dict witch can be turned into JSON.
+
+        @param channel: The channel object you want to turn JSON ready.
+
+        @return: A dict conversion of the channel object.
+        """
         return {
             "channel_order": channel.channel_order,
             "cid": channel.cid,
@@ -50,6 +60,14 @@ class Channel():
 
     @staticmethod
     def channels_json(channels):
+        """
+        This method turns a list of channel objects into a list of dict object, each dict object contains the
+        information about the channel.
+
+        @param channels: The list of channel object you want to turn.
+
+        @return: A list of dict object containing the information about the channels.
+        """
         return [Channel.channel_json(channel) for channel in channels]
 
     def __str__(self):

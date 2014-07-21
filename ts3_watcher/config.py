@@ -28,7 +28,7 @@ __version__ = "0.01"
 
 
 ts3admin_user = "serveradmin"
-ts3admin_pass = "CMynp1qh"
+ts3admin_pass = "dRLEptl8"
 ts3address = "127.0.0.1"
 ts3port = 10011
 
